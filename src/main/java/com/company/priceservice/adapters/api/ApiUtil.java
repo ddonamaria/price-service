@@ -4,6 +4,8 @@ import org.springframework.web.context.request.NativeWebRequest;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class ApiUtil {
     public static void setExampleResponse(NativeWebRequest req, String contentType, String example) {
@@ -14,6 +16,12 @@ public class ApiUtil {
             res.getWriter().print(example);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static void validateAtLeastOneNotNull(Object... params) {
+        if (params == null || params.length == 0 || Arrays.stream(params).allMatch(Objects::isNull)) {
+            throw new IllegalArgumentException("At least one parameter must not be null");
         }
     }
 }

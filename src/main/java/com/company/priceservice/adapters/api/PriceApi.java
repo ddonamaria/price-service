@@ -26,7 +26,7 @@ import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-03-04T10:13:56.291876500+01:00[Europe/Madrid]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
 @Validated
 @Tag(name = "price", description = "Find price details")
 public interface PriceApi {

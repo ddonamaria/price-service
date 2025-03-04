@@ -4,6 +4,7 @@ import com.company.priceservice.adapters.repositories.JpaPriceRepository;
 import com.company.priceservice.application.dto.PriceDTO;
 import com.company.priceservice.application.mappers.PriceMapper;
 import com.company.priceservice.application.ports.PriceService;
+import com.company.priceservice.domain.exceptions.PriceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public class PriceServiceImpl implements PriceService {
     public PriceDTO findPriceByParams(LocalDateTime applicationDate, Long productId, Integer brandId) {
         return priceRepository.findPriceByParams(productId, brandId, applicationDate)
                 .map(priceMapper::entityToDto)
-                .orElseThrow();
+                .orElseThrow(() -> new PriceNotFoundException(
+                        "No price found for productId: " + productId + ", brandId: " + brandId + ", date: " + applicationDate));
     }
 }

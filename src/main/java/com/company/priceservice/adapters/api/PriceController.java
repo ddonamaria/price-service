@@ -16,6 +16,7 @@ public class PriceController implements PriceApi {
 
     @Override
     public ResponseEntity<PriceDTO> findPriceByParams(LocalDateTime applicationDate, Long productId, Integer brandId){
+        ApiUtil.validateAtLeastOneNotNull(applicationDate, productId, brandId);
         PriceDTO price = priceService.findPriceByParams(applicationDate, productId, brandId);
         return ResponseEntity.ok(price);
     }
