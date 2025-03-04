@@ -1,15 +1,14 @@
 openapi: 3.0.3
 info:
   title: Price Service API
-  description: |-
-    This is a small project that manages prices.
-    
-    [The Price Service repository](https://github.com/ddonamaria/price-service)
+  description: "This is a small project that manages prices.
+  
+  [The Price Service repository](https://github.com/ddonamaria/price-service)"
   contact:
     email: daviddonamaria@gmail.com
   version: 1.0.0
 servers:
-  - url: http://localhost:8080/api/v3
+  - url: http://localhost:8080/
 tags:
   - name: price
     description: Find price details
@@ -19,7 +18,7 @@ paths:
       tags:
         - price
       summary: "Find prices by applicationDate, productId or brandId"
-      operationId: findPrices
+      operationId: findPriceByParams
       parameters:
         - name: applicationDate
           in: query
@@ -51,9 +50,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/PriceDTO'
+                $ref: '#/components/schemas/PriceDTO'
         "400":
           description: "Invalid input parameters"
         "404":

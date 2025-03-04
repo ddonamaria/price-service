@@ -1,4 +1,4 @@
-package com.company.priceservice.infrastructure.api;
+package com.company.priceservice.adapters.api;
 
 import org.springframework.web.context.request.NativeWebRequest;
 

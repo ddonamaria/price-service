@@ -3,7 +3,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-package com.company.priceservice.infrastructure.api;
+package com.company.priceservice.adapters.api;
 
 import com.company.priceservice.application.dto.PriceDTO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,10 +24,9 @@ import org.springframework.web.context.request.NativeWebRequest;
 import javax.annotation.Generated;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-03-04T10:13:56.291876500+01:00[Europe/Madrid]")
 @Validated
 @Tag(name = "price", description = "Find price details")
 public interface PriceApi {
@@ -47,7 +46,7 @@ public interface PriceApi {
      *         or No price found for the specified parameters (status code 404)
      */
     @Operation(
-        operationId = "findPrices",
+        operationId = "findPriceByParams",
         summary = "Find prices by applicationDate, productId or brandId",
         tags = { "price" },
         responses = {
@@ -63,7 +62,7 @@ public interface PriceApi {
         value = "/price",
         produces = { "application/json" }
     )
-    default ResponseEntity<List<PriceDTO>> findPrices(
+    default ResponseEntity<PriceDTO> findPriceByParams(
         @Parameter(name = "applicationDate", description = "Application date in format YYYY-MM-DD'T'HH:mm:ss") @Valid @RequestParam(value = "applicationDate", required = false) LocalDateTime applicationDate,
         @Parameter(name = "productId", description = "Id of product associated") @Valid @RequestParam(value = "productId", required = false) Long productId,
         @Parameter(name = "brandId", description = "Id of brand associated") @Valid @RequestParam(value = "brandId", required = false) Integer brandId
@@ -72,7 +71,6 @@ public interface PriceApi {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
                     String exampleString = "{ \"productId\" : 35455, \"endDate\" : \"2025-12-31T23:59:59\", \"price\" : 25.45, \"brandId\" : 1, \"currency\" : \"EUR\", \"priceId\" : 2, \"startDate\" : \"2025-01-01T00:00:00\" }";
-
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
