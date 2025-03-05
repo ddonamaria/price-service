@@ -5,7 +5,6 @@
 **Price Service** is a **REST** service that allows querying product prices at different points in time.  
 It has been developed using **Java** and **Spring Boot**, following a **hexagonal architecture** and following the **API First** principle for API definition.
 
----
 
 ## 🛠️ Technologies used
 
@@ -20,7 +19,6 @@ This project has been built with the following technologies:
 - **JUnit 5, Mockito** -> Tests
 - **Docker** → Application containerization
 
----
 
 ## 🚀 Local deployment
 
@@ -42,7 +40,6 @@ mvn spring-boot:run
 4. Access the API locally:
    [Swagger UI](http://localhost:8080/swagger-ui/index.html)
 
----
 
 ## 🐳 Deployment with Docker
 
@@ -56,7 +53,6 @@ docker build -t price-service:1.0.0 .
 docker run -p 8080:8080 price-service:1.0.0
 ```
 
----
 
 ## 🧪 Run the tests
 Execute the tests with:
@@ -64,7 +60,6 @@ Execute the tests with:
 mvn test
 ```
 
----
 
 ## 🗄️ Access to the H2 Database
 You can access the in-memory **H2** database via browser:
@@ -72,7 +67,7 @@ You can access the in-memory **H2** database via browser:
 - **URL**: [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 - **Credentials**: These can be found in the [application.yml](src/main/resources/application.yaml) configuration file.
 
----
+
 
 ## 🔍 Development Decisions
 
@@ -84,4 +79,3 @@ You can access the in-memory **H2** database via browser:
     - **"PRICE_LIST"** has been renamed to **"PriceId"** as it acts as the unique identifier for each price.
     - **"CURR"** has been renamed to **"CURRENCY"** to follow a consistent pattern and avoid abbreviations.
 
----
