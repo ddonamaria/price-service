@@ -1,4 +1,4 @@
-package com.company.priceservice.teste2e;
+package com.company.priceservice.integrationtests;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PriceServiceE2ETest {
+public class PriceServiceIntegrationTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
