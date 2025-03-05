@@ -1,5 +1,6 @@
 package com.company.priceservice.adapters.api;
 
+import com.company.priceservice.infrastructure.exceptions.InvalidParameterException;
 import org.springframework.web.context.request.NativeWebRequest;
 
 import javax.servlet.http.HttpServletResponse;
@@ -21,7 +22,7 @@ public class ApiUtil {
 
     public static void validateAtLeastOneNotNull(Object... params) {
         if (params == null || params.length == 0 || Arrays.stream(params).allMatch(Objects::isNull)) {
-            throw new IllegalArgumentException("At least one parameter must not be null");
+            throw new InvalidParameterException("At least one parameter must not be null");
         }
     }
 }

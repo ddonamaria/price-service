@@ -24,6 +24,4 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                 ErrorMessage.builder().status(HttpStatus.BAD_REQUEST).message(ex.getMessage()).build());
     }
-
-
 }
