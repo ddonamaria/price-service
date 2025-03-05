@@ -1,4 +1,4 @@
-package com.company.priceservice.domain.model;
+package com.company.priceservice.domain.models;
 
 import com.company.priceservice.domain.valueobjects.CurrencyCode;
 import jakarta.persistence.*;

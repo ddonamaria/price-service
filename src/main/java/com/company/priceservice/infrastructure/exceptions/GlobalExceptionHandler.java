@@ -1,7 +1,6 @@
 package com.company.priceservice.infrastructure.exceptions;
 
-import com.company.priceservice.domain.exceptions.ErrorMessage;
-import com.company.priceservice.domain.exceptions.PriceNotFoundException;
+import com.company.priceservice.domain.models.ErrorMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

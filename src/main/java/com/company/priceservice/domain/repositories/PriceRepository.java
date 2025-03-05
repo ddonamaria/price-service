@@ -1,6 +1,6 @@
 package com.company.priceservice.domain.repositories;
 
-import com.company.priceservice.domain.model.Price;
+import com.company.priceservice.domain.models.Price;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDateTime;

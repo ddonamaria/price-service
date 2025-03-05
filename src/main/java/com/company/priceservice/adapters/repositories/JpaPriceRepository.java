@@ -1,6 +1,6 @@
 package com.company.priceservice.adapters.repositories;
 
-import com.company.priceservice.domain.model.Price;
+import com.company.priceservice.domain.models.Price;
 import com.company.priceservice.domain.repositories.PriceRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

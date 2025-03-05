@@ -1,4 +1,4 @@
-package com.company.priceservice.domain.exceptions;
+package com.company.priceservice.domain.models;
 
 import lombok.Builder;
 import lombok.Getter;

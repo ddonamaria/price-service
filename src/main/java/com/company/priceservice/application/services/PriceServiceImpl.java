@@ -4,7 +4,7 @@ import com.company.priceservice.adapters.repositories.JpaPriceRepository;
 import com.company.priceservice.application.dto.PriceDTO;
 import com.company.priceservice.application.mappers.PriceMapper;
 import com.company.priceservice.application.ports.PriceService;
-import com.company.priceservice.domain.exceptions.PriceNotFoundException;
+import com.company.priceservice.infrastructure.exceptions.PriceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

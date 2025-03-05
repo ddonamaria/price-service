@@ -1,7 +1,7 @@
 package com.company.priceservice.infrastructure.config;
 
 import com.company.priceservice.adapters.repositories.JpaPriceRepository;
-import com.company.priceservice.domain.model.Price;
+import com.company.priceservice.domain.models.Price;
 import com.company.priceservice.domain.valueobjects.CurrencyCode;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
