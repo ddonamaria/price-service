@@ -1,4 +1,4 @@
-package com.company.priceservice.adapters.repositories;
+package com.company.priceservice.infrastructure.adapters.repositories;
 
 import com.company.priceservice.domain.models.Price;
 import com.company.priceservice.domain.repositories.PriceRepository;

@@ -1,4 +1,4 @@
-package com.company.priceservice.adapters.api;
+package com.company.priceservice.infrastructure.adapters.api;
 
 import com.company.priceservice.infrastructure.exceptions.InvalidParameterException;
 import org.springframework.web.context.request.NativeWebRequest;

@@ -3,7 +3,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-package com.company.priceservice.adapters.api;
+package com.company.priceservice.infrastructure.adapters.api;
 
 import com.company.priceservice.application.dto.PriceDTO;
 import io.swagger.v3.oas.annotations.Operation;
