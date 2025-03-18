@@ -1,6 +1,6 @@
 package com.company.priceservice.domain.repositories;
 
-import com.company.priceservice.domain.models.Price;
+import com.company.priceservice.infrastructure.adapters.repositories.entities.PriceEntity;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDateTime;
@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface PriceRepository {
 
-    Optional<Price> findPriceByParams(@Param("productId") Long productId,
-                                      @Param("brandId") Integer brandId,
-                                      @Param("applicationDate") LocalDateTime applicationDate);
+    Optional<PriceEntity> findPriceByParams(@Param("productId") Long productId,
+                                            @Param("brandId") Integer brandId,
+                                            @Param("applicationDate") LocalDateTime applicationDate);
 }

@@ -5,7 +5,7 @@
  */
 package com.company.priceservice.infrastructure.adapters.api;
 
-import com.company.priceservice.application.dto.PriceDTO;
+import com.company.priceservice.infrastructure.adapters.api.models.PriceDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;

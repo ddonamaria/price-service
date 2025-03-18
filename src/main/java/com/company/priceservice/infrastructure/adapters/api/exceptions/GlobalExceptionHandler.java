@@ -1,6 +1,6 @@
-package com.company.priceservice.infrastructure.exceptions;
+package com.company.priceservice.infrastructure.adapters.api.exceptions;
 
-import com.company.priceservice.domain.models.ErrorMessage;
+import com.company.priceservice.infrastructure.adapters.api.models.ErrorMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

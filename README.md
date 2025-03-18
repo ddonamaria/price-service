@@ -16,7 +16,7 @@ This project has been built with the following technologies:
 - **OpenAPI** → API Definition
 - **OpenAPI Generator** → Automatic generation of DTOs and controllers
 - **MapStruct** → Entity mapping
-- **JUnit 5, Mockito** -> Tests
+- **JUnit 5, Mockito** → Tests
 - **Docker** → Application containerization
 
 

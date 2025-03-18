@@ -1,4 +1,4 @@
-package com.company.priceservice.domain.models;
+package com.company.priceservice.infrastructure.adapters.api.models;
 
 import lombok.Builder;
 import lombok.Getter;

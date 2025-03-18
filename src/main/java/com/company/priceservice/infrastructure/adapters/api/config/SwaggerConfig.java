@@ -1,4 +1,4 @@
-package com.company.priceservice.infrastructure.config;
+package com.company.priceservice.infrastructure.adapters.api.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

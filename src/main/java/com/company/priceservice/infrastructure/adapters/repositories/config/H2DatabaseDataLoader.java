@@ -1,8 +1,8 @@
-package com.company.priceservice.infrastructure.config;
+package com.company.priceservice.infrastructure.adapters.repositories.config;
 
-import com.company.priceservice.domain.models.Price;
 import com.company.priceservice.domain.valueobjects.CurrencyCode;
 import com.company.priceservice.infrastructure.adapters.repositories.JpaPriceRepository;
+import com.company.priceservice.infrastructure.adapters.repositories.entities.PriceEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,8 +19,8 @@ public class H2DatabaseDataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        List<Price> priceList = List.of(
-            new Price(1,
+        List<PriceEntity> priceEntityList = List.of(
+            new PriceEntity(1,
                     35455L,
                     1,
                     0,
@@ -29,7 +29,7 @@ public class H2DatabaseDataLoader implements CommandLineRunner {
                     new BigDecimal("35.50"),
                     CurrencyCode.EUR),
 
-            new Price(2,
+            new PriceEntity(2,
                     35455L,
                     1,
                     1,
@@ -38,7 +38,7 @@ public class H2DatabaseDataLoader implements CommandLineRunner {
                     new BigDecimal("25.45"),
                     CurrencyCode.EUR),
 
-            new Price(3,
+            new PriceEntity(3,
                     35455L,
                     1,
                     1,
@@ -47,7 +47,7 @@ public class H2DatabaseDataLoader implements CommandLineRunner {
                     new BigDecimal("30.50"),
                     CurrencyCode.EUR),
 
-            new Price(4,
+            new PriceEntity(4,
                     35455L,
                     1,
                     1,
@@ -57,6 +57,6 @@ public class H2DatabaseDataLoader implements CommandLineRunner {
                     CurrencyCode.EUR)
         );
 
-        jpaPriceRepository.saveAll(priceList);
+        jpaPriceRepository.saveAll(priceEntityList);
     }
 }

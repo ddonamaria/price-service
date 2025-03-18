@@ -1,10 +1,11 @@
 package com.company.priceservice.application.services;
 
-import com.company.priceservice.application.dto.PriceDTO;
-import com.company.priceservice.application.mappers.PriceMapper;
+import com.company.priceservice.application.PriceServiceImpl;
 import com.company.priceservice.domain.models.Price;
+import com.company.priceservice.infrastructure.adapters.api.exceptions.PriceNotFoundException;
 import com.company.priceservice.infrastructure.adapters.repositories.JpaPriceRepository;
-import com.company.priceservice.infrastructure.exceptions.PriceNotFoundException;
+import com.company.priceservice.infrastructure.adapters.repositories.entities.PriceEntity;
+import com.company.priceservice.infrastructure.adapters.repositories.mappers.PriceEntityMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -24,21 +25,21 @@ class PriceServiceImplTest {
     private JpaPriceRepository priceRepository;
 
     @Mock
-    private PriceMapper priceMapper;
+    private PriceEntityMapper priceEntityMapper;
 
     @InjectMocks
     private PriceServiceImpl priceService;
 
     @Test
     void findPriceByParams() {
-        Optional<Price> optionalPrice = Optional.of(new Price());
+        Optional<PriceEntity> optionalPrice = Optional.of(new PriceEntity());
         when(priceRepository.findPriceByParams(35455L, 1, LocalDateTime.parse("2025-03-05T21:00:00"))).thenReturn(optionalPrice);
-        when(priceMapper.entityToDto(optionalPrice.get())).thenReturn(new PriceDTO());
+        when(priceEntityMapper.entityToPrice(optionalPrice.get())).thenReturn(new Price());
 
-        PriceDTO result = priceService.findPriceByParams(LocalDateTime.parse("2025-03-05T21:00:00"), 35455L, 1);
+        Price result = priceService.findPriceByParams(LocalDateTime.parse("2025-03-05T21:00:00"), 35455L, 1);
 
         assertNotNull(result);
-        assertInstanceOf(PriceDTO.class, result);
+        assertInstanceOf(Price.class, result);
     }
 
     @Test
@@ -49,6 +50,5 @@ class PriceServiceImplTest {
                 PriceNotFoundException.class,
                 () -> priceService.findPriceByParams(LocalDateTime.parse("2025-03-05T21:00:00"), 35455L, 1)
         );
-
     }
 }

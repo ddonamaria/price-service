@@ -1,4 +1,4 @@
-package com.company.priceservice.application.dto;
+package com.company.priceservice.infrastructure.adapters.api.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

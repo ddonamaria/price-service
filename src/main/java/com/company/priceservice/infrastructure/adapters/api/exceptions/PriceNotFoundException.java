@@ -1,4 +1,4 @@
-package com.company.priceservice.infrastructure.exceptions;
+package com.company.priceservice.infrastructure.adapters.api.exceptions;
 
 public class PriceNotFoundException extends RuntimeException {
 
