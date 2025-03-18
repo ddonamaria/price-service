@@ -45,12 +45,12 @@ mvn spring-boot:run
 
 1. Build the Docker image 
 ```sh
-docker build -t price-service:1.0.0 .
+docker build -t price-service:latest .
 ```
 
 2. Run the Docker image in a container
 ```sh
-docker run -p 8080:8080 price-service:1.0.0
+docker run -p 8080:8080 price-service:latest
 ```
 
 
