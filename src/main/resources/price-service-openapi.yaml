@@ -17,21 +17,21 @@ paths:
     get:
       tags:
         - price
-      summary: "Find prices by applicationDate, productId or brandId"
+      summary: Find prices by applicationDate, productId or brandId
       operationId: findPriceByParams
       parameters:
         - name: applicationDate
           in: query
           required: false
-          description: "Application date in format YYYY-MM-DD'T'HH:mm:ss"
+          description: Application date in format YYYY-MM-DD'T'HH:mm:ss
           schema:
             type: string
             format: datetime
-            example: "2025-01-01T00:00:00"
+            example: 2025-01-01T00:00:00
         - name: productId
           in: query
           required: false
-          description: "Id of product associated"
+          description: Id of product associated
           schema:
             type: integer
             format: int64
@@ -39,7 +39,7 @@ paths:
         - name: brandId
           in: query
           required: false
-          description: "Id of brand associated"
+          description: Id of brand associated
           schema:
             type: integer
             format: int32
@@ -52,9 +52,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/PriceDTO'
         "400":
-          description: "Invalid input parameters"
+          description: Invalid input parameters
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
         "404":
-          description: "No price found for the specified parameters"
+          description: No price found for the specified parameters
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+
 components:
   schemas:
     PriceDTO:
@@ -73,11 +82,11 @@ components:
         startDate:
           type: string
           format: datetime
-          example: "2025-01-01T00:00:00"
+          example: 2025-01-01T00:00:00
         endDate:
           type: string
           format: datetime
-          example: "2025-12-31T23:59:59"
+          example: 2025-12-31T23:59:59
         price:
           type: number
           format: double
@@ -88,4 +97,15 @@ components:
             - EUR
             - USD
             - GBP
-          example: "EUR"
+          example: EUR
+    ErrorMessage:
+      type: object
+      properties:
+        status:
+          type: string
+          description: HTTP status code of the error
+          example: 404 NOT_FOUND
+        message:
+          type: string
+          description: Error message describing the issue
+          example: No price found for the specified parameters

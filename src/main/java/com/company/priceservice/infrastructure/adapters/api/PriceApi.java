@@ -5,6 +5,7 @@
  */
 package com.company.priceservice.infrastructure.adapters.api;
 
+import com.company.priceservice.infrastructure.adapters.api.models.ErrorMessage;
 import com.company.priceservice.infrastructure.adapters.api.models.PriceDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -53,8 +54,12 @@ public interface PriceApi {
             @ApiResponse(responseCode = "200", description = "successful operation", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = PriceDTO.class))
             }),
-            @ApiResponse(responseCode = "400", description = "Invalid input parameters"),
-            @ApiResponse(responseCode = "404", description = "No price found for the specified parameters")
+            @ApiResponse(responseCode = "400", description = "Invalid input parameters", content = {
+                @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))
+            }),
+            @ApiResponse(responseCode = "404", description = "No price found for the specified parameters", content = {
+                @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))
+            })
         }
     )
     @RequestMapping(
