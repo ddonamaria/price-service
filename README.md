@@ -63,11 +63,10 @@ Execute unitary and integration tests:
 ```
 
 Execute test E2E with cucumber:
-_A report is generated in HTML and JSON formats in the target/cucumber directory with the results of the E2E tests._
 ```sh
 mvn verify
 ```
-
+_A report is generated in HTML and JSON formats in the target/cucumber directory with the results of the E2E tests._
 
 
 ## 🗄️ Access to the H2 Database
