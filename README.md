@@ -16,7 +16,8 @@ This project has been built with the following technologies:
 - **OpenAPI** → API Definition
 - **OpenAPI Generator** → Automatic generation of DTOs and controllers
 - **MapStruct** → Entity mapping
-- **JUnit 5, Mockito** → Tests
+- **JUnit 5, Mockito** → Unitary tests
+- **Cucumber, Gherkin** → Tests E2E
 - **Docker** → Application containerization
 
 
@@ -55,10 +56,18 @@ docker run -p 8080:8080 price-service:latest
 
 
 ## 🧪 Run the tests
-Execute the tests with:
+
+Execute unitary and integration tests:
 ```sh
-mvn test
+.\mvnw test
 ```
+
+Execute test E2E with cucumber:
+_A report is generated in HTML and JSON formats in the target/cucumber directory with the results of the E2E tests._
+```sh
+mvn verify
+```
+
 
 
 ## 🗄️ Access to the H2 Database
