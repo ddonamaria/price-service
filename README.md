@@ -30,12 +30,12 @@ git clone https://github.com/ddonamaria/price-service.git
 
 2. Compile the project using Maven
 ```sh
-mvn clean install
+.\mvnw clean package
 ```
 
 3. Run the application
 ```sh
-mvn spring-boot:run
+.\mvnw spring-boot:run
 ```
 
 4. Access the API locally:
@@ -64,9 +64,9 @@ Execute unitary and integration tests:
 
 Execute test E2E with cucumber:
 ```sh
-mvn verify
+.\mvnw verify
 ```
-_A report is generated in HTML and JSON formats in the target/cucumber directory with the results of the E2E tests._
+_A report is generated in HTML and JSON formats in the **target/cucumber** directory with the results of the E2E tests._
 
 
 ## 🗄️ Access to the H2 Database
@@ -74,7 +74,6 @@ You can access the in-memory **H2** database via browser:
 
 - **URL**: [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 - **Credentials**: These can be found in the [application.yml](src/main/resources/application.yaml) configuration file.
-
 
 
 ## 🔍 Development Decisions
